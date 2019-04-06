@@ -34,6 +34,11 @@
 
               <span class="product--price">
                 {% include 'product-price' %}
+                {% for tag in product.tags %}
+                    {% if tag contains 'sale' %}
+                        <div class="product--onSale" aria-hidden="true">Sale</div>
+                    {% endif %}
+                {% endfor %}
               </span>
             </div>
           </div>
