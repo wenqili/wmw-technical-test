@@ -5,5 +5,28 @@
  *
  */
 .featured-collection {
-  
+  margin: auto;
+
+  @include media-query($small) {
+    width: 100%;
+  }
+
+  @include media-query($medium) {
+    width: $grid-medium;
+  }
+
+  @include media-query($large) {
+    width: $grid-large;
+  }
+
+  @include media-query($widescreen) {
+    width: $grid-widescreen;
+  }
+}
+
+.carousel--cell {
+  height: 551px;
+  width: 306px;
+  padding-right: 11px;
+  padding-left: 11px;
 }
