@@ -16,7 +16,7 @@ h4,
 h5,
 h6 {
   font-family: $font-heading;
-  color:$primary-color;
+  color: $primary-color;
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -46,19 +46,34 @@ h2 {
   font-size: 40px;
   font-weight: 700;
   line-height: 49px;
+
+  @include media-query($small) {
+    font-size: 28px;
+    line-height: 34px;
+  }
 }
 
 h5 {
   font-size: 21px;
   font-weight: 700;
   line-height: 26px;
+  
+  @include media-query($small) {
+    font-size: 18px;
+    line-height: 23px;
+  }
 }
 
 p {
-  color:$secondary-color;
+  color: $secondary-color;
   font-size: 18px;
   font-weight: 300;
   line-height: 26px;
   margin-top: 0;
   margin-bottom: 1.5rem;
+  
+  @include media-query($small) {
+    font-size: 14px;
+    line-height: 21px;
+  }
 }

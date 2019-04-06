@@ -7,8 +7,9 @@
 .featured-collection {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 6rem; /// Should I keep the fixed header???
+  margin-top: 6rem; /// keep the fixed header
   margin-bottom: 6rem;
+
   padding-left: calc(#{$grid-gutter} / 2);
   padding-right: calc(#{$grid-gutter} / 2);
 
@@ -30,15 +31,28 @@
 }
 
 .collection--carousel {
-  padding-bottom: 3.4rem;
+  padding-left: calc(#{$grid-gutter} / 2);
+  padding-right: calc(#{$grid-gutter} / 2);
+  padding-bottom: 3.4rem; // dot top distance
   margin-bottom: 4.7rem;
 }
 
 .collection--carouselCell {
-  height: 551px;
-  width: 306px;
-  padding-right: 11px;
-  padding-left: 11px;
+  width: 33.33%; // large
+  padding-right: calc(#{$grid-gutter} / 4);
+  padding-left: calc(#{$grid-gutter} / 4);
+
+  @include media-query($small) {
+    width: 100%;
+  }
+
+  @include media-query($medium) {
+    width: 50%;
+  }
+
+  @include media-query($widescreen) {
+    width: 25%;
+  }
 }
 
 .collection--title {
@@ -52,19 +66,42 @@
   margin-right: auto;
   margin-bottom: 4.1rem;
   text-align: center;
+
+  @include media-query($small) {
+    width: 100%;
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
+  }
+
+  @include media-query($medium) {
+    width: 50%;
+  }
 }
 
-
-.collection-linkButton{
+.collection-linkButton {
   text-align: center;
   padding-top: 4.7rem;
 }
 
-.product--image {
+.product--container {
   position: relative;
 }
 
+.product--image {
+  position: relative;
+
+  &,
+  img {
+    width: 100%;
+  }
+
+  &:hover .product--addToCartButton {
+    visibility: visible;
+  }
+}
+
 .product--addToCartButton {
+  visibility: hidden;
   position: absolute;
   bottom: 1.8rem;
   left: 0;
@@ -76,6 +113,8 @@
 }
 
 .product--info {
+  // position: relative;
+  display: block;
   padding-top: 1.2rem;
 }
 
@@ -86,15 +125,34 @@
 .product--price {
   color: $secondary-color;
   font-size: 18px;
+
+  @include media-query($small) {
+    font-size: 18px;
+    line-height: 18px;
+  }
+}
+
+.product--onSale {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 26px;
+  width: 56px;
+  font-size: 14px;
+  line-height: 24px;
+  background-color: $primary-color;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
 }
 
 .primary-button {
   border: none;
   background-color: $primary-color;
-  color: #FFFFFF;
-  font-size: 18px;	
-  font-weight: 700;	
-  line-height: 23px;	
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23px;
   text-align: center;
   height: 55px;
   width: 175px;
@@ -108,4 +166,27 @@
   font-weight: 700;
   line-height: 23px;
   text-align: center;
+}
+
+/// Overwrite Fllickity
+.flickity-button {
+  background: none;
+  top: 40%;
+
+  &.previous {
+    left: calc(-#{$grid-gutter});
+  }
+
+  &.next {
+    right: calc(-#{$grid-gutter});
+  }
+
+  @include media-query($small) {
+    display: none;
+  }
+}
+
+.dot {
+  height: 7px !important;
+  width: 7px !important;
 }

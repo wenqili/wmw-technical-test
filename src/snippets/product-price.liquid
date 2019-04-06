@@ -3,7 +3,9 @@
     {%- assign sale_price = product.price | money -%}
     {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
   {% else %}
-    {{ 'products.product.on_sale' | t }}
+    <div class="product--onSale" aria-hidden="true">
+      Sale
+    </div>
     {{ product.price | money }}
   {% endif %}
 {% else %}

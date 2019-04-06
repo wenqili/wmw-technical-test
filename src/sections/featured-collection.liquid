@@ -19,8 +19,8 @@
       {% for product in collection.products limit: 6 %}
         {% assign current_variant = product.selected_or_first_available_variant %}
   
-        <a href="{{ product.url | within: collection }}">
-          <div class="collection--carouselCell" >
+        <a class="collection--carouselCell" href="{{ product.url | within: collection }}">
+          <div class="product--container">
             <div class="product--image">
               {% if product.featured_image != blank %}
                 {{ product.featured_image | img_url: 'large' | img_tag }}
