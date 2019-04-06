@@ -151,21 +151,21 @@
 }
 
 
-/// Overwrite Fllickity
+/// Overwrite Flickity
 .flickity-button {
-  background: none;
-  top: 40%;
+  background: none !important;;
+  top: 40% !important;
 
   &.previous {
-    left: calc(-#{$grid-gutter});
+    left: calc(-#{$grid-gutter}) !important;;
   }
 
   &.next {
-    right: calc(-#{$grid-gutter});
+    right: calc(-#{$grid-gutter}) !important;;
   }
 
   @include media-query($small) {
-    display: none;
+    display: none ;
   }
 }
 
