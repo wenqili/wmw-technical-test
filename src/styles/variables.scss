@@ -77,3 +77,10 @@ $breakpoints: (
   $large-up '(min-width: #{$grid-large})',
   $widescreen '(min-width: #{$grid-widescreen})'
 );
+
+/**
+ * Technical test.
+ * - add new variables for styling
+ */
+$primary-color: #003366;
+$secondary-color: #BBBBBB;

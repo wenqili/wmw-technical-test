@@ -9,34 +9,39 @@
 <section class="featured-collection" data-section-id="{{ section.id }}" data-section-type="featured-collection">
   {%- assign collection = collections[section.settings.collection] -%}
 
-  <h2>{{ collection.title | escape }}</h2>
+  <h2 class="collection--title">{{ collection.title | escape }}</h2>
+  <div class="collection--description">
+      <p>{{ collection.description }}</p>
+  </div>
 
-  <p>{{ collection.description }}</p>
 
-  <div class="carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
+  <div class="collection--carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
       {% for product in collection.products limit: 6 %}
         {% assign current_variant = product.selected_or_first_available_variant %}
   
         <a href="{{ product.url | within: collection }}">
-          <div  class="carousel--cell" >
-            <div>
+          <div class="collection--carouselCell" >
+            <div class="product--image">
               {% if product.featured_image != blank %}
                 {{ product.featured_image | img_url: 'large' | img_tag }}
               {% endif %}
               
-              <span js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
+              <button class="product--addToCartButton secondary-button" js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</button>
             </div>
 
-            <div>
-              <p>{{ product.title | escape }}</p>
+            <div class="product--info">
+              <h5 class="product--title">{{ product.title | escape }}</h5>
 
-              <span>
+              <span class="product--price">
                 {% include 'product-price' %}
               </span>
             </div>
           </div>
         </a>
       {% endfor %}
+  </div>
+  <div class="collection-linkButton">
+    <button class="primary-button">View Collection</button>
   </div>
 </section>
 

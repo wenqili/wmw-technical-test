@@ -16,6 +16,9 @@ h4,
 h5,
 h6 {
   font-family: $font-heading;
+  color:$primary-color;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 body,
@@ -35,19 +38,27 @@ a:focus {
  * Technical test
  * 
  */
+a {
+  text-decoration: none;
+}
+
 h2 {
-  height: 48px;
-  width: 303px;
-  color: #003366;
   font-size: 40px;
   font-weight: 700;
   line-height: 49px;
-  text-align: center;
+}
+
+h5 {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 26px;
 }
 
 p {
-  color: #9b9b9b;
+  color:$secondary-color;
   font-size: 18px;
   font-weight: 300;
   line-height: 26px;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
 }
