@@ -30,3 +30,24 @@ select {
 a:focus {
   color: inherit;
 }
+
+/**
+ * Technical test
+ * 
+ */
+h2 {
+  height: 48px;
+  width: 303px;
+  color: #003366;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 49px;
+  text-align: center;
+}
+
+p {
+  color: #9b9b9b;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 26px;
+}

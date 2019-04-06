@@ -57,6 +57,11 @@
   {% include 'script-tags', layout: 'theme' %}
 
   {{ content_for_header }}
+
+  {% comment %} Flickity {% endcomment %}
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  
 </head>
 
 <body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
