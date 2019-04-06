@@ -9,3 +9,25 @@
   user-select: none;
   appearance: none;
 }
+
+.primary-button {
+  border: none;
+  background-color: $primary-color;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23px;
+  text-align: center;
+  height: 55px;
+  width: 175px;
+}
+
+.secondary-button {
+  border: none;
+  color: $primary-color;
+  background-color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23px;
+  text-align: center;
+}
